@@ -7,60 +7,7 @@
 
 body {
     height: 100vh;
-}
-
-.container {
-    display: flex;
-    height: 100vh;
-}
-
-.partie-gauche {
-    width: 50%;
-    background-color: #31332F;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo {
-    width: 300px;
-    height: 300px;
-}
-
-.partie-droite {
-    width: 50%;
-    height: 100vh;
-    background-color: white;
-
-    display: flex;
-    flex-direction: column;
-    /*place les éléments verticalement :*/
-    justify-content: center;
-    /*centre le contenu verticalement.*/
-    align-items: center;
-    /*centre le contenu horizontalement.*/
-}
-
-.partie-droite form div {
-    margin: 20px;
-}
-
-.partie-droite form {
-    width: 350px;
-}
-
-.partie-droite input {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-.partie-droite button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    cursor: pointer;
+    /* background-color: grey; */
 }
 
 hr {
@@ -79,104 +26,8 @@ button {
     cursor: pointer;
 }
 
-/*-------------------------------------------*/
-/*partie Create Workshop */
-/*-------------------------------------------*/
-
-.partie-gauche-workshop {
-    width: 50%;
-    background-color: white;
+.container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100vh;
 }
 
-.logoWorkshop {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-
-}
-
-.hrWorkshop {
-    width: 5%;
-    border: 1px solid #f50101;
-    position: absolute;
-    top: 130px;
-    left: 40px;
-}
-
-.h1-workshop {
-        color: #31332F;
-}
-
-.partie-gauche-workshop {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.partie-gauche-workshop form div {
-    margin-bottom: 30px;
-}
-
-.partie-gauche-workshop form {
-    margin-top: 30px;
-    width: 400px;
-}
-
-.partie-gauche-workshop input {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-.partie-gauche-workshop button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    cursor: pointer;
-}
-.partie-gauche-workshop .form-label{
-    margin-bottom: 30px;
-}
-.partie-droite-workshop .button-worshop{
-    background-color: #30B071;
-    color: white;
-    font-size: 18px;
-    border: none;
-    padding: 12px 100px;
-    border-radius: 8px 30px 8px 30px;
-    cursor: pointer;
-   position: absolute;
-   right: 20px;
-   top: 20px;
-
-}
-.partie-droite-workshop {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.partie-droite-workshop  input {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-#Description {
-    height: 300px;
-    width: 100%;
-
-}
-.partie-droite-workshop label {
-    margin: 10px 0px;
-
-}
