@@ -1,0 +1,17 @@
+.logo-calendar-workshop {
+    width: 245px;
+    height: 165px;
+
+}
+.calendar-over-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    padding-top: 3vh;
+}
+
+header {
+ 
+}

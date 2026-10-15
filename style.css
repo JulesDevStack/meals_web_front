@@ -1,3 +1,9 @@
+:root {
+    --color-jungle: #00B46C;
+    --color-charcoal: #31332F;
+    --color-brick: #C03225;
+    /* TO-DO include Montserrat Regular from google fonts and Inter font as well*/
+}
 
 * {
     margin: 0;
