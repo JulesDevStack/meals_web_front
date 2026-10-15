@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Application</title>
+    <!-- HTML, utilise le fichier CSS qui s'appelle style.css-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="partie-gauche-workshop">
+            <div>
+                <img class="logoWorkshop" src="images/mealsfestival.png" alt="Logo">
+            </div>
+            <hr class="hrWorkshop">
+            <h1 class="h1-workshop">Create a Workshop</h1>
+
+            <form action="" method="post">
+                <div>
+                    <label class="form-label" for="nom">Name</label>
+                    <input type="text" id="nom" name="nom" placeholder="Entrez votre nom"  required>
+                </div>
+
+                <div>
+                    <label class="form-label" for="courriel">Category</label>
+                    <input type="text" id="categorie" name="categorie" placeholder="Entrez la catégorie"  required>
+                </div>
+                <div>
+                    <label class="form-label" for="courriel">Start time</label>
+                    <input type="text" id="Start time" name="Start time" placeholder="Entrez l'heure de début" 
+                        required>
+                </div>
+                <div>
+                    <label class="form-label" for="courriel">End time</label>
+                    <input type="text" id="End time" name="End time" placeholder="Entrez l'heure de fin"  required>
+                </div>
+
+            </form>
+        </div>
+        <div class="partie-droite-workshop">
+                <button type="submit" class="button-worshop"> Entrer </button>
+            <div>
+                <label class="form-label" for="courriel">Capacity Max</label>
+                <input type="text" id="Capacity Max" name="Capacity Max" placeholder="Entrez la capacité maximale" 
+                    required>
+            </div>
+            <div>
+
+                <label class="form-label" for="courriel">Description</label>
+                <input type="text" id="Description" name="Description" placeholder="Entrez la description"  required>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
