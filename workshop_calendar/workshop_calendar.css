@@ -1,6 +1,6 @@
 .logo-calendar-workshop {
-    width: 245px;
-    height: 165px;
+    width: 160px;
+    height: 112px;
 
 }
 .calendar-over-header-wrapper {
@@ -10,8 +10,32 @@
     padding-left: 5vh;
     padding-right: 5vh;
     padding-top: 3vh;
+    padding-bottom: 1vh;
 }
 
 header {
- 
+}
+
+.create-workshop-button {
+    background-color: #30B071;
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px 30px 8px 30px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #30b07000;
+    color: white;
+    font-size: 18px;
+    border: 1px;
+    padding: 2px;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.week-selector {
+  display: flex;
+  align-items: flex-end;
 }
