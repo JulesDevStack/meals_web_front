@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Application</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="workshop-details.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-placement">
+            <h1 class="h1-workshop-details">Workshop details</h1>
+            <div>
+                <img class="logoWorkshopDetails" src="/images/mealsfestival.png" alt="Logo">
+                <hr class="hrWorkshopDetails">
+            </div>
+        </div>
+
+    </header>
+    <div class="container">
+        <div class="partie-gauche-workshop-details">
+
+            <form action="" method="post">
+                <main>
+                    <div class="workshop-columns">
+                        <div class="left-columns">
+                            <div class="form-row-name">
+                                <label class="form-label-workshop-details" for="name">Name</label>
+                                <input type="text" id="name" name="nom" placeholder="Entrez votre nom" required>
+
+                            </div>
+
+                            <div class="form-row-name">
+                                <label class="form-label-workshop-details" for="category">Category</label>
+                                <input type="text" id="category" name="categorie" placeholder="Entrez la catégorie"
+                                    required>
+                            </div>
+
+                            <div class="form-row-name">
+                                <label class="form-label-workshop-details" for="start-time">Start time</label>
+                                <div class="hstack">
+                                    <input type="text" id="hour" name="hour" placeholder="Heure de début" required>
+                                    <input type="text" id="day" name="day" placeholder="Date" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row-name">
+                                <label class="form-label-workshop-details" for="end-time">End time</label>
+                                <div class="hstack">
+                                    <input type="text" id="hour" name="hour" placeholder="Heure de fin" required>
+                                    <input type="text" id="day" name="day" placeholder="Date" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row-name">
+                                <label class="form-label-workshop-details" for="capacity">Max Capacity</label>
+                                <input type="text" id="capacity" name="capacity"
+                                    placeholder="Entrez une capacité maximale" required>
+                            </div>
+
+                            <div class="form-columns">
+                                <div class="description-container">
+                                    <label class="form-label-workshop-details"
+                                        for="description-details">Description</label>
+                                    <input type="text" id="description-details" name="description-details"
+                                        placeholder="Description..." required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="right-columns">
+
+                            <div class="form-columns">
+                                <label class="form-label-workshop-details" for="participant">Participant</label>
+                                <input type="text" id="participant" name="participant" placeholder="Nom du participant"
+                                    required>
+                                <input type="text" id="participant" name="participant" placeholder="Nom du participant"
+                                    required>
+                                <input type="text" id="participant" name="participant" placeholder="Nom du participant"
+                                    required>
+                                <input type="text" id="participant" name="participant" placeholder="Nom du participant"
+                                    required>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </main>
+            </form>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <div>
+            <button id="btn-cancel" type="submit"> Cancel </button>
+            <button id="btn-delete" type="submit"> Delete Workshop </button>
+        </div>
+        <button id="btn-update" type="submit"> Update Workshop </button>
+    </div>
+
+
+</body>
+
+</html>

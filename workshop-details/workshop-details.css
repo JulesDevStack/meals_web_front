@@ -1,0 +1,181 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 15px;
+}
+
+.logoWorkshopDetails {
+    width: 100px;
+    height: auto;
+    top: 30px;
+    right: 30px;
+}
+
+.hrWorkshopDetails {
+    width: 50%;
+    border: 1px solid var(--color-brick);
+    top: 130px;
+    right: 40px;
+}
+
+.h1-workshop-details {
+    color: #31332F;
+}
+
+.partie-gauche-workshop-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    align-items: center;
+}
+
+.partie-gauche-workshop-details form {
+    margin-top: 30px;
+    width: 90%;
+    max-width: 900px;
+}
+
+.partie-gauche-workshop-details input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.partie-gauche-workshop-details button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.partie-gauche-workshop-details .form-label {
+    align-items: center;
+}
+
+.workshop-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: start;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    margin-bottom: 20px;
+}
+
+.form-culumns {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+/*form {
+    border: 2px solid red;
+}
+
+.workshop-columns {
+    border: 2px solid blue;
+}*/
+
+.left-columns,
+.right-columns {
+    min-width: 0;
+}
+
+.form-label-workshop-details {
+    margin-right: 1vh;
+    width: 50%;
+}
+
+#description {
+    width: 100px;
+    height: 300px;
+}
+
+.form-culumns input {
+    gap: 15px;
+}
+
+
+.right-columns input {
+    margin-bottom: 15px;
+}
+
+.hstack {
+    display: flex;
+    gap: 10px;
+}
+
+.form-row-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    margin-bottom: 20px;
+}
+
+.h1-workshop-details {
+    top: 40px;
+    left: 40px;
+}
+
+.right-columns div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+#btn-delete, #btn-cancel {
+    background-color: var(--color-brick);
+}
+
+.button-container {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+align-self: stretch;
+}
+
+.button-container div {
+    display: flex;
+}
+
+.description-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.header-placement {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-placement div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    height: auto;
+}
+
+.button-container div {
+    gap: 20px;
+}
