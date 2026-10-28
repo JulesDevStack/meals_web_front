@@ -1,37 +1,32 @@
 <!DOCTYPE html>
-<html lang="fr">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Application</title>
+    <title>Login</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="register_form.css">
 </head>
-
 <body>
     <div class="container">
-        <div class="partie-gauche">
-            <img class="logo" src="images/mealsfestival.png" alt="Logo">
+        <div class="left_section">
+            <img class="logo" src="images/mealsfestival.png" alt="Meals Festival Logo">
         </div>
-        <div class="partie-droite">
-            <h1>Connexion</h1>
+        <div class="right_section">
+            <h1>Login</h1>
             <hr>
             <form action="calendar.html" method="post">
                 <div>
-                    <label for="nom"> </label>
-                    <input type="email" id="courriel" name="courriel" placeholder="Entrez votre email" required>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 </div>
-
                 <div>
-                    <label for="courriel"> </label>
-                    <input type="password" id="motdepasse" name="motdepasse" placeholder="Entrez votre mot de passe"
-                        required>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
-                <button id="btn" type="submit"> Entrer </button>
+                <button id="btn" type="submit">Log In</button>
             </form>
         </div>
     </div>
 </body>
-
 </html>

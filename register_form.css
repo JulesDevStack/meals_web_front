@@ -1,150 +1,98 @@
-.partie-gauche {
-    width: 50%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #31332F;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+.left_section {
+    flex: 1;
+    min-width: 0;
     background-color: #31332F;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 5%;
 }
-
 .logo {
-    width: 300px;
-    height: 300px;
-}
-
-.partie-droite {
-    width: 50%;
-    height: 100vh;
-    background-color: white;
-
-    display: flex;
-    flex-direction: column;
-    /*place les éléments verticalement :*/
-    justify-content: center;
-    /*centre le contenu verticalement.*/
-    align-items: center;
-    /*centre le contenu horizontalement.*/
-}
-
-.partie-droite form div {
-    margin: 20px;
-}
-
-.partie-droite form {
-    width: 350px;
-}
-
-.partie-droite input {
+    display: block;
     width: 100%;
-    padding: 12px;
-    border: none;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
-
-.partie-droite button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    cursor: pointer;
-}
-
-/*-------------------------------------------*/
-/*partie Create Workshop */
-/*-------------------------------------------*/
-
-.partie-gauche-workshop {
-    width: 50%;
+.right_section {
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+    padding: 5%;
     background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logoWorkshop {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-
-}
-
-.hrWorkshop {
-    width: 5%;
-    border: 1px solid #f50101;
-    position: absolute;
-    top: 130px;
-    left: 40px;
-}
-
-.h1-workshop {
-    color: #31332F;
-}
-
-.partie-gauche-workshop {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.partie-gauche-workshop form div {
-    margin-bottom: 30px;
-}
-
-.partie-gauche-workshop form {
-    margin-top: 30px;
-    width: 400px;
-}
-
-.partie-gauche-workshop input {
+.right_section h1 {
     width: 100%;
-    padding: 12px;
-    border: none;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2%;
 }
-
-.partie-gauche-workshop button {
+.right_section hr {
+    width: 15%;
+    border: none;
+    border-top: 0.15rem solid #f50101;
+    margin-bottom: 5%;
+}
+.right_section form {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    padding: 12px;
-    border: none;
-    cursor: pointer;
+    gap: 1.5rem;
 }
-.partie-gauche-workshop .form-label{
-    margin-bottom: 30px;
+.form-group {
+    width: 100%;
 }
-.partie-droite-workshop .button-worshop{
+.right_section label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.right_section input {
+    display: block;
+    width: 100%;
+    padding: 0.8em;
+    border: 0.08rem solid #e0e0e0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0.15rem 0.2rem 0.5rem rgba(0, 0, 0, 0.10);
+}
+.right_section input:focus {
+    border-color: #30B071;
+}
+.right_section button {
+    display: block;
+    width: 100%;
+    padding: 0.8em;
     background-color: #30B071;
     color: white;
-    font-size: 18px;
+    font-size: 1.1rem;
+    font-weight: 600;
     border: none;
-    padding: 12px 100px;
-    border-radius: 8px 30px 8px 30px;
+    border-radius: 0.5rem 1.8rem 0.5rem 1.8rem;
     cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-
 }
-.partie-droite-workshop {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.partie-droite-workshop  input {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-#Description {
-    height: 300px;
-    width: 100%;
-
-}
-.partie-droite-workshop label {
-    margin: 10px 0px;
-
+.right_section button:hover {
+    background-color: #26945D;
 }

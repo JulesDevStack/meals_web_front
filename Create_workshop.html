@@ -1,59 +1,58 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Application</title>
-    <!-- HTML, utilise le fichier CSS qui s'appelle style.css-->
-    <link rel="stylesheet" href="style.css">
+    <title>Create a Workshop</title>
+    <link rel="stylesheet" href="Create_workshop_style.css">
 </head>
 
 <body>
     <div class="container">
-
-        <div class="partie-gauche-workshop">
-            <div>
-                <img class="logoWorkshop" src="images/mealsfestival.png" alt="Logo">
+        <form class="workshop-form" action="" method="post">
+            <div class="left-gauche-workshop">
+                <div class="header-workshop">
+                    <img class="logoWorkshop" src="images/mealsfestival.png" alt="Meals Festival Logo">
+                    <hr class="hrWorkshop">
+                </div>
+                <h1 class="h1-workshop">Create a Workshop</h1>
+                <div class="form-group">
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter workshop name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="category">Category</label>
+                    <input type="text" id="category" name="category" placeholder="Enter category" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="start-time">Start Time</label>
+                    <input type="time" id="start-time" name="start-time" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="end-time">End Time</label>
+                    <input type="time" id="end-time" name="end-time" required>
+                </div>
             </div>
-            <hr class="hrWorkshop">
-            <h1 class="h1-workshop">Create a Workshop</h1>
-
-            <form action="" method="post">
-                <div>
-                    <label class="form-label" for="nom">Name</label>
-                    <input type="text" id="nom" name="nom" placeholder="Entrez votre nom"  required>
-                </div>
-
-                <div>
-                    <label class="form-label" for="courriel">Category</label>
-                    <input type="text" id="categorie" name="categorie" placeholder="Entrez la catégorie"  required>
-                </div>
-                <div>
-                    <label class="form-label" for="courriel">Start time</label>
-                    <input type="text" id="Start time" name="Start time" placeholder="Entrez l'heure de début" 
+            <div class="right-section-workshop">
+                 <button type="submit" class="button-workshop">
+                    Create Workshop
+                </button>
+                <div class="form-group">
+                    <label class="form-label" for="capacity">Maximum Capacity</label>
+                    <input type="number" id="capacity" name="capacity" placeholder="Enter maximum capacity" min="1"
                         required>
                 </div>
-                <div>
-                    <label class="form-label" for="courriel">End time</label>
-                    <input type="text" id="End time" name="End time" placeholder="Entrez l'heure de fin"  required>
+                <div class="form-group">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea id="description" name="description" placeholder="Enter workshop description"
+                        required></textarea>
                 </div>
+               
 
-            </form>
-        </div>
-        <div class="partie-droite-workshop">
-                <button type="submit" class="button-worshop"> Entrer </button>
-            <div>
-                <label class="form-label" for="courriel">Capacity Max</label>
-                <input type="text" id="Capacity Max" name="Capacity Max" placeholder="Entrez la capacité maximale" 
-                    required>
             </div>
-            <div>
 
-                <label class="form-label" for="courriel">Description</label>
-                <input type="text" id="Description" name="Description" placeholder="Entrez la description"  required>
-            </div>
-        </div>
+        </form>
 
     </div>
 </body>

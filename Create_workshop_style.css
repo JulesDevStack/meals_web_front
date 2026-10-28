@@ -1,0 +1,109 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #31332F;
+}
+.container {
+    width: 100%;
+    min-height: 100vh;
+}
+.workshop-form {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+.left-gauche-workshop {
+    width: 50%;
+    padding: 30px 50px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header-workshop {
+    width: 100%;
+    margin-bottom: 30px;
+}
+.logoWorkshop {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+.hrWorkshop {
+    width: 60px;
+    border: none;
+    border-top: 2px solid #f50101;
+    margin-top: 10px;
+}
+.h1-workshop {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 30px;
+    color: #31332F;
+    font-size: 28px;
+}
+.form-group {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 25px;
+}
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.form-group input,
+.form-group textarea {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.10);
+    outline: none;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #30B071;
+}
+.right-section-workshop {
+    width: 50%;
+    padding: 150px 50px 40px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-group textarea {
+    height: 300px;
+    resize: none;
+}
+.button-workshop {
+    width: 80%;
+    max-width: 400px;
+    padding: 14px 25px;
+    
+    margin-bottom: 14px;
+    background-color: #30B071;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px 30px 8px 30px;
+    cursor: pointer;
+}
+.button-workshop:hover {
+    background-color: #26945D;
+}

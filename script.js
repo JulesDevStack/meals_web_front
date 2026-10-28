@@ -1,0 +1,1 @@
+const password = document.querySelector("#motdepasse")
