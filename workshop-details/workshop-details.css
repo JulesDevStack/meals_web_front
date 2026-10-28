@@ -179,3 +179,7 @@ align-self: stretch;
 .button-container div {
     gap: 20px;
 }
+
+#hour {
+    max-width: 30%;
+}
