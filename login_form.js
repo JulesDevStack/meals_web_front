@@ -13,12 +13,12 @@ const checkPassword = (password) => {
 }
 // fetch function 
 async function sendLoginRequest(email, password) {
-    let loginCredentials = {email,password};
+    let loginCredentials = {email: email, password: password};
     try {
         /* TODO find the real route - too lazy right now and not sure which one it is,
          or if i need to write it from scratch in back */
         const response = await fetch("get list of users with admin role URL", {
-        method: "Post",
+        method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
@@ -29,7 +29,7 @@ async function sendLoginRequest(email, password) {
         if (!response.ok) {
             throw new Error(`HTTP Error: ${response.status}`);
         }
-        return response.ok;
+        return (response.ok, response.data);
     } catch (error) {
         console.error("Credentials not valid");
         alert("Credentials not valid");
