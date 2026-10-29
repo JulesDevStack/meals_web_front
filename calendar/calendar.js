@@ -157,7 +157,7 @@ function createWorkshop({
 	expandButton.classList.add("workshop_expand");
 
 	const expandIcon = document.createElement("img");
-	expandIcon.src = "images/chevron_handdraw.svg";
+	expandIcon.src = "/images/chevron_handdraw.svg";
 	expandIcon.alt = "unfold card to see details";
 
 	expandButton.append(expandIcon);
