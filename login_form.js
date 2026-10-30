@@ -13,23 +13,24 @@ const checkPassword = (password) => {
 }
 // fetch function 
 async function sendLoginRequest(email, password) {
-    let loginCredentials = {email,password};
+    let loginCredentialsDTO = {email: email, password: password};
     try {
         /* TODO find the real route - too lazy right now and not sure which one it is,
          or if i need to write it from scratch in back */
-        const response = await fetch("get list of users with admin role URL", {
-        method: "Post",
+        const response = await fetch("http://localhost:8081/login", {
+        method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
 
-        body: JSON.stringify(loginCredentials)
+        body: JSON.stringify(loginCredentialsDTO)
         });
         // TODO need to confirm if credentials match in the back end before I can get this response
         if (!response.ok) {
             throw new Error(`HTTP Error: ${response.status}`);
+            // TODO Error page
         }
-        return response.ok;
+        return {status: response.ok, data: await response.json()};
     } catch (error) {
         console.error("Credentials not valid");
         alert("Credentials not valid");
@@ -51,10 +52,12 @@ form.addEventListener("submit", async function (event) {
     console.log(email + "\n" + password) // for debugging, delete later
     const loginSuccess = await sendLoginRequest(email.value, password.value);
     // if it checks out, go to calendar here
-    if (loginSuccess) {
+    if (loginSuccess.status) {
+        document.cookie = `token=${loginSuccess.data}`;
         console.log("Login successful")
         console.log(loginSuccess)
         // TODO GO TO CALENDAR HERE - need to do it
+        //window.location.href = "calendar.html"
     }
 }
 );
