@@ -49,14 +49,20 @@ form.addEventListener("submit", async function (event) {
         return
     }
     // add fetch here
-    console.log(email + "\n" + password) // for debugging, delete later
     const loginSuccess = await sendLoginRequest(email.value, password.value);
     // if it checks out, go to calendar here
     if (loginSuccess.status) {
-        document.cookie = `token=${loginSuccess.data}`;
-        console.log("Login successful")
-        console.log(loginSuccess)
-        // TODO GO TO CALENDAR HERE - need to do it
+        document.cookie = `token=,${loginSuccess.data.token}`;
+        
+        // for debugging
+        console.log("Login successful, return:");
+        console.log(loginSuccess);
+        console.log("token:");
+        console.log(loginSuccess.data.token);
+        console.log("cookie:");
+        console.log(document.cookie);
+
+        // go to calendar
         //window.location.href = "calendar.html"
     }
 }
