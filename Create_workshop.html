@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create a Workshop</title>
     <link rel="stylesheet" href="Create_workshop.css">
+    <script src="create_workshop.js" defer></script>
 </head>
 
 <body>
     <div class="container">
-        <form class="workshop-form" action="" method="post">
+        <form class="workshop-form" action="" method="post" novalidate>
             <div class="left-gauche-workshop">
                 <div class="header-workshop">
                     <img class="logoWorkshop" src="images/mealsfestival.png" alt="Meals Festival Logo">
@@ -23,19 +24,30 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="category">Category</label>
-                    <input type="text" id="category" name="category" placeholder="Enter category" required>
+                    <select id="category" name="category" required>
+                        <option value="">Select a category</option>
+                    </select>
+                    <!--   <input type="text" id="category" name="category" placeholder="Enter category" required>-->
                 </div>
+
                 <div class="form-group">
                     <label class="form-label" for="start-time">Start Time</label>
-                    <input type="time" id="start-time" name="start-time" required>
+                    <div class="date-time-group">
+                        <input type="date" id="start-date" required>
+                        <input type="time" id="start-time" required>
+                    </div>
                 </div>
+
                 <div class="form-group">
                     <label class="form-label" for="end-time">End Time</label>
-                    <input type="time" id="end-time" name="end-time" required>
+                    <div class="date-time-group">
+                        <input type="date" id="end-date" required>
+                        <input type="time" id="end-time" required>
+                    </div>
                 </div>
             </div>
             <div class="right-section-workshop">
-                 <button type="submit" class="button-workshop">
+                <button type="submit" class="button-workshop">
                     Create Workshop
                 </button>
                 <div class="form-group">
@@ -48,7 +60,7 @@
                     <textarea id="description" name="description" placeholder="Enter workshop description"
                         required></textarea>
                 </div>
-               
+
 
             </div>
 

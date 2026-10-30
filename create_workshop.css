@@ -61,7 +61,21 @@ body {
     font-size: 16px;
     font-weight: 600;
 }
+
+.date-time-group {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.date-time-group input {
+    flex: 1;
+    min-width: 0;
+}
+
+
 .form-group input,
+.form-group select,
 .form-group textarea {
     display: block;
     width: 100%;
