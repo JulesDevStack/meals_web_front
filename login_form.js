@@ -30,7 +30,7 @@ async function sendLoginRequest(email, password) {
             throw new Error(`HTTP Error: ${response.status}`);
             // TODO Error page
         }
-        return {status: response.ok, data: response.data};
+        return {status: response.ok, data: await response.json()};
     } catch (error) {
         console.error("Credentials not valid");
         alert("Credentials not valid");
