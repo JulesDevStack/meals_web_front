@@ -2,8 +2,6 @@ const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const form = document.querySelector("form");
 
-// comments are handwritten for my own needs and for my pair programmer - no ai <- Filip
-
 // password check
 const checkPassword = (password) => {
     return password.length >= 8 &&
@@ -15,8 +13,6 @@ const checkPassword = (password) => {
 async function sendLoginRequest(email, password) {
     let loginCredentialsDTO = {email: email, password: password};
     try {
-        /* TODO find the real route - too lazy right now and not sure which one it is,
-         or if i need to write it from scratch in back */
         const response = await fetch("http://localhost:8081/login", {
         method: "POST",
         headers: {
@@ -25,10 +21,9 @@ async function sendLoginRequest(email, password) {
 
         body: JSON.stringify(loginCredentialsDTO)
         });
-        // TODO need to confirm if credentials match in the back end before I can get this response
         if (!response.ok) {
             throw new Error(`HTTP Error: ${response.status}`);
-            // TODO Error page
+            // TODO Error page ---> José
         }
         return {status: response.ok, data: await response.json()};
     } catch (error) {
@@ -50,9 +45,9 @@ form.addEventListener("submit", async function (event) {
     }
     // add fetch here
     const loginSuccess = await sendLoginRequest(email.value, password.value);
-    // if it checks out, go to calendar here
+    // if it checks out, go to calendar
     if (loginSuccess.status) {
-        document.cookie = `token=,${loginSuccess.data.token}`;
+        document.cookie = `token=${loginSuccess.data.token}`;
         
         // for debugging
         console.log("Login successful, return:");
@@ -63,7 +58,7 @@ form.addEventListener("submit", async function (event) {
         console.log(document.cookie);
 
         // go to calendar
-        //window.location.href = "calendar.html"
+        window.location.href = "calendar.html"
     }
 }
 );
