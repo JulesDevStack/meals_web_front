@@ -1,3 +1,13 @@
+:root {
+    --color-jungle: #00B46C;
+    --color-charcoal: #31332F;
+    --color-brick: #C03225;
+    /* Typography */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-bold: 700;
+}
 
 * {
     margin: 0;
@@ -7,7 +17,11 @@
 
 body {
     height: 100vh;
-    /* background-color: grey; */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
 }
 
 hr {
@@ -24,10 +38,5 @@ button {
     padding: 12px 30px;
     border-radius: 8px 30px 8px 30px;
     cursor: pointer;
-}
-
-.container {
-    display: flex;
-    height: 100vh;
 }
 
