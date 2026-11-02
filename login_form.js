@@ -59,6 +59,7 @@ form.addEventListener("submit", async function (event) {
 
         // go to calendar
         window.location.href = "calendar.html"
+        
     }
 }
 );
