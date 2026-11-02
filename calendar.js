@@ -6,9 +6,7 @@ function getHourFromDate(date) {
 		hour: '2-digit'
 	})
 }
-
 function getWorkshop() {
-
 	fetch('http://localhost:8081/workshops')
 		.then(response => response.json())
 		.then((workshops) => {
