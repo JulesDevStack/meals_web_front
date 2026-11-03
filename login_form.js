@@ -3,16 +3,16 @@ const password = document.querySelector("#password");
 const form = document.querySelector("form");
 
 // password check
-// const checkPassword = (password) => {
-//     return password.length >= 4 &&
-//         // /[A-Z]/.test(password) &&
-//         /[a-z]/.test(password) &&
-//         /[0-9]/.test(password);
-// }
-
 const checkPassword = (password) => {
-    return true
+    return password.length >= 6 &&
+        // /[A-Z]/.test(password) &&
+        /[a-z]/.test(password) &&
+        /[0-9]/.test(password);
 }
+
+// const checkPassword = (password) => {
+//     return true
+// }
 
 // fetch function 
 async function sendLoginRequest(email, password) {

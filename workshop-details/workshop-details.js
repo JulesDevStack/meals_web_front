@@ -10,11 +10,38 @@ const maxCapacity = document.querySelector("#capacity")
 const description = document.querySelector("#description-details")
 const participantsList = document.querySelector("#participants-list")
 const btnUpdate = document.querySelector("#btn-update");
+const btnCancel = document.getElementById("btn-cancel")
+const btnDelete = document.getElementById("btn-delete")
 const workshopID = new URLSearchParams(window.location.search).get("id");
 
 let currentCategoryID = null;
 let currentTotalSubscribers = 0;
 
+
+btnCancel.addEventListener('click', e => {
+	e.preventDefault()
+	window.location.pathname = "calendar/calendar.html"
+})
+
+btnDelete.addEventListener('click', async e => {
+	e.preventDefault()
+	const response = await fetch(
+		'http://localhost:8081/workshops/' + workshopID,
+		{
+			method: 'DELETE',
+			headers: {
+				'Content-Type': 'application/json',
+				'Authorization': `Bearer ${getJWT()}`
+			}
+		}
+	);
+
+	if (!response.ok) {
+		window.alert(`Erreur HTTP : ${response.status}`)
+	}
+
+	window.location.pathname = "calendar/calendar.html"
+})
 
 async function getWorkshopByID() {
 	try {
@@ -30,7 +57,7 @@ async function getWorkshopByID() {
 		);
 
 		if (!response.ok) {
-			throw new Error(`Erreur HTTP : ${response.status}`);
+			window.alert(`Erreur HTTP : ${response.status}`)
 		}
 
 		const data = await response.json();
@@ -105,7 +132,7 @@ async function cancelReservation(reservationID, participantElement) {
 			{
 				method: "DELETE",
 				headers: {
-					"Authorization": `Bearer ${getJWT()}`
+					"Authorization": `Bearer ${token}`
 				}
 			}
 		);
@@ -181,8 +208,10 @@ function displayParticipants(reservations) {
 			deleteButton.classList.add("participant-delete");
 			deleteButton.textContent = "×";
 
-			deleteButton.addEventListener("click", () => {
-				cancelReservation(reservation.id, participantElement);
+			deleteButton.addEventListener("click", async e => {
+				// e.preventDefault()
+				// console.log("coicou")
+				await cancelReservation(reservation.id, participantElement);
 			});
 
 			participantElement.append(userName, deleteButton);
@@ -191,4 +220,4 @@ function displayParticipants(reservations) {
 		});
 }
 
-getWorkshopByID();
+await getWorkshopByID();
