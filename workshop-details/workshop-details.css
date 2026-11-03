@@ -1,33 +1,68 @@
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 15px;
-    font-family: var(--font-primary);
-    font-weight: var(--font-regular);
+html {
+    min-height: 100%;
 }
 
+body {
+    min-height: 100vh;
+    height: auto;
+    margin: 0;
+    padding: 24px clamp(16px, 3vw, 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 28px;
+    font-family: var(--font-primary, 'Montserrat', sans-serif);
+    font-weight: var(--font-regular, 400);
+    color: var(--color-charcoal, #31332F);
+    box-sizing: border-box;
+}
 
-main {
+header {
     width: 100%;
 }
 
-.logoWorkshopDetails {
-    width: 100px;
-    height: auto;
-    top: 30px;
-    right: 30px;
-}
-
-.hrWorkshopDetails {
-    width: 50%;
-    border: 1px solid var(--color-brick);
-    top: 130px;
-    right: 40px;
+.header-placement {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
 }
 
 .h1-workshop-details {
-    color: #31332F;
+    margin: 0;
+    color: var(--color-charcoal, #31332F);
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    line-height: 1.2;
+}
+
+.header-placement > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 8px;
+}
+
+.logoWorkshopDetails {
+    display: block;
+    width: clamp(72px, 8vw, 100px);
+    height: auto;
+}
+
+.hrWorkshopDetails {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-top: 2px solid var(--color-brick, #C03225);
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex: 1 0 auto;
+    min-width: 0;
 }
 
 .partie-gauche-workshop-details {
@@ -35,158 +70,128 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    align-items: center;
+    min-width: 0;
 }
 
+main {
+    width: 100%;
+    min-width: 0;
+}
 
 .partie-gauche-workshop-details form {
-    width: 90%;
-    max-width: 900px;
-    margin: 30px auto 0;
-}
-
-.partie-gauche-workshop-details input {
     width: 100%;
-    padding: 12px;
-    border: none;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-
-
-.partie-gauche-workshop-details .form-label {
-    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .workshop-columns {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
+    gap: clamp(24px, 4vw, 48px);
     width: 100%;
-    max-width: 900px;
     margin: 0 auto;
 }
-
-.form-row {
-    display: flex;
-    align-items: center;
-    margin-right: 15px;
-    margin-bottom: 20px;
-}
-
-.form-columns {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-/*form {
-    border: 2px solid red;
-}
-
-.workshop-columns {
-    border: 2px solid blue;
-}*/
 
 .left-columns,
 .right-columns {
     min-width: 0;
 }
 
+.form-row-name {
+    display: grid;
+    grid-template-columns: minmax(110px, 35%) minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    margin-bottom: 22px;
+}
+
 .form-label-workshop-details {
-    margin-right: 1vh;
-    width: 50%;
+    display: block;
+    width: auto;
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: var(--font-medium, 500);
+    line-height: 1.4;
 }
 
-#description {
-    width: 100px;
-    height: 300px;
+.partie-gauche-workshop-details input,
+.partie-gauche-workshop-details select,
+.partie-gauche-workshop-details textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 12px;
+    border: 1px solid #dedede;
+    border-radius: 6px;
+    background: #fff;
+    color: var(--color-charcoal, #31332F);
+    font: inherit;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
 }
 
-.right-columns input {
-    margin-bottom: 15px;
+.partie-gauche-workshop-details input,
+.partie-gauche-workshop-details select {
+    min-height: 44px;
+}
+
+.partie-gauche-workshop-details input:focus,
+.partie-gauche-workshop-details select:focus,
+.partie-gauche-workshop-details textarea:focus {
+    outline: 2px solid rgba(0, 180, 108, 0.25);
+    border-color: var(--color-jungle, #00B46C);
 }
 
 .hstack {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
+    width: 100%;
+    min-width: 0;
 }
 
-.form-row-name {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-self: stretch;
-    margin-bottom: 20px;
+.hstack input {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 8px;
 }
 
-/*.h1-workshop-details {
-    top: 40px;
-    left: 40px;
-}*/
-
-.header-placement {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.right-columns div {
+.form-columns {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    align-self: stretch;
-}
-
-#btn-delete, #btn-cancel {
-    background-color: var(--color-brick);
-}
-
-.button-container {
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-align-self: stretch;
-}
-
-.button-container div {
-    display: flex;
-    gap: 22px;
+    gap: 12px;
+    min-width: 0;
+    margin-bottom: 22px;
 }
 
 .description-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    align-self: stretch;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    min-width: 0;
 }
 
-.header-placement {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+#description-details {
+    width: 100%;
+    min-height: 160px;
+    height: auto;
+    resize: vertical;
+    line-height: 1.5;
 }
 
-.header-placement div {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.container {
-    display: flex;
+#description {
+    width: 100%;
+    min-height: 160px;
     height: auto;
 }
 
-.button-container div {
-    gap: 20px;
-}
-
 #hour {
-    max-width: 30%;
+    max-width: 100%;
 }
 
 
@@ -195,72 +200,224 @@ align-self: stretch;
     flex-direction: column;
     gap: 10px;
     width: 100%;
+    min-width: 0;
 }
 
-/* Carte participant */
+.right-columns > .form-columns {
+    width: 100%;
+}
+
 .right-columns #participants-list .participant-item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
+    gap: 12px;
     width: 100%;
+    min-width: 0;
     min-height: 46px;
-    padding: 6px 10px;
+    padding: 8px 12px;
     box-sizing: border-box;
-
-    background-color: white;
+    background: #fff;
     border: 1px solid #f5dfb9;
     border-radius: 12px;
-
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12);
 }
 
-/* Nom du participant */
 .participant-item span {
-    font-size: 18px;
+    min-width: 0;
+    overflow-wrap: anywhere;
     color: #3b3b3b;
+    font-size: 0.95rem;
 }
 
-/* Bouton de suppression */
 .participant-delete {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    flex-shrink: 0;
-
-    width: 26px;
-    height: 26px;
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
     padding: 0;
-
     border: 1px solid #333;
     border-radius: 50%;
-
-    background-color: white;
-    color: #c83225;
-
-    font-size: 28px;
+    background: #fff;
+    color: var(--color-brick, #C03225);
+    font-size: 22px;
     font-weight: 300;
     line-height: 1;
-
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s ease;
 }
 
 .participant-delete:hover {
-    background-color: #fff0ee;
+    background: #fff0ee;
 }
 
 #category {
     width: 100%;
-    height: 42px;
+    min-height: 44px;
     padding: 0 12px;
-    font-family: var(--font-primary);
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: var(--font-primary, 'Montserrat', sans-serif);
+    font-size: 0.9rem;
+    border: 1px solid #dedede;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
     cursor: pointer;
 }
 
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    margin-top: 28px;
+}
+
+.button-container > div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.button-container button {
+    width: auto;
+    max-width: 100%;
+    min-height: 44px;
+    padding: 11px 22px;
+    border: 0;
+    border-radius: 8px 24px 8px 24px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: var(--font-medium, 500);
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.button-container button:hover {
+    filter: brightness(0.93);
+}
+
+.button-container button:active {
+    transform: translateY(1px);
+}
+
+#btn-delete,
+#btn-cancel {
+    background: var(--color-brick, #C03225);
+}
+
+#btn-update {
+    background: var(--color-jungle, #30B071);
+}
+
+
+@media screen and (max-width: 900px) {
+    body {
+        padding: 20px;
+        gap: 24px;
+    }
+
+    .workshop-columns {
+        gap: 24px;
+    }
+
+    .form-row-name {
+        grid-template-columns: minmax(95px, 32%) minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .button-container button {
+        padding-inline: 17px;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    body {
+        padding: 16px;
+        gap: 22px;
+    }
+
+    .header-placement {
+        align-items: flex-start;
+    }
+
+    .h1-workshop-details {
+        font-size: 1.5rem;
+    }
+
+    .logoWorkshopDetails {
+        width: 70px;
+    }
+
+    .workshop-columns {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .form-row-name {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 8px;
+        margin-bottom: 18px;
+    }
+
+    .form-label-workshop-details {
+        font-size: 0.9rem;
+    }
+
+    .hstack {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .right-columns {
+        margin-top: 4px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button-container > div {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+
+    .button-container > button {
+        width: 100%;
+    }
+
+    .button-container button {
+        padding: 11px 12px;
+        font-size: 0.88rem;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    body {
+        padding: 12px;
+    }
+
+    .header-placement {
+        gap: 12px;
+    }
+
+    .h1-workshop-details {
+        font-size: 1.25rem;
+    }
+
+    .hstack {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .button-container > div {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

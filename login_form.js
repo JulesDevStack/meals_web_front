@@ -3,12 +3,17 @@ const password = document.querySelector("#password");
 const form = document.querySelector("form");
 
 // password check
+// const checkPassword = (password) => {
+//     return password.length >= 4 &&
+//         // /[A-Z]/.test(password) &&
+//         /[a-z]/.test(password) &&
+//         /[0-9]/.test(password);
+// }
+
 const checkPassword = (password) => {
-    return password.length >= 8 &&
-        /[A-Z]/.test(password) &&
-        /[a-z]/.test(password) &&
-        /[0-9]/.test(password);
+    return true
 }
+
 // fetch function 
 async function sendLoginRequest(email, password) {
     let loginCredentialsDTO = {email: email, password: password};
@@ -22,8 +27,7 @@ async function sendLoginRequest(email, password) {
         body: JSON.stringify(loginCredentialsDTO)
         });
         if (!response.ok) {
-            throw new Error(`HTTP Error: ${response.status}`);
-            // TODO Error page ---> José
+            alert("pas ok");
         }
         return {status: response.ok, data: await response.json()};
     } catch (error) {
@@ -50,15 +54,15 @@ form.addEventListener("submit", async function (event) {
         document.cookie = `token=${loginSuccess.data.token}`;
         
         // for debugging
-        console.log("Login successful, return:");
-        console.log(loginSuccess);
-        console.log("token:");
-        console.log(loginSuccess.data.token);
-        console.log("cookie:");
-        console.log(document.cookie);
+        // console.log("Login successful, return:");
+        // console.log(loginSuccess);
+        // console.log("token:");
+        // console.log(loginSuccess.data.token);
+        // console.log("cookie:");
+        // console.log(document.cookie);
 
         // go to calendar
-        window.location.href = "calendar.html"
+        window.location.href = "calendar/calendar.html"
         
     }
 }

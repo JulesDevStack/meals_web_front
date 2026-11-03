@@ -19,9 +19,13 @@ function getWorkshop() {
 					subtitle: workshop.categoryName,
 					description: workshop.description,
 					time: `${startHour} - ${endHour}`,
-					date: new Date(workshop.startTime).toLocaleDateString('fr-FR'),
+					date: new Date(workshop.startTime).toLocaleDateString('fr-FR', {
+						day: 'numeric',
+						month: 'short'
+					}),
 					availableSpots: workshop.availableSpot,
-					maxCapacity: workshop.maxCapacity
+					maxCapacity: workshop.maxCapacity,
+					id: workshop.id
 				}
 			});
 			buildCalendar(workshopsDTO)
@@ -44,7 +48,8 @@ function buildCalendar(workshops) {
 				time: workshop.time,
 				date: workshop.date,
 				availableSpots: workshop.availableSpots,
-				maxCapacity: workshop.maxCapacity
+				maxCapacity: workshop.maxCapacity,
+				id: workshop.id
 			})
 			column.appendChild(workshopElement)
 		})
@@ -98,7 +103,8 @@ function createWorkshop({
 	time,
 	date,
 	availableSpots,
-	maxCapacity
+	maxCapacity,
+	id
 }) {
 	const article = document.createElement("article");
 	article.classList.add("workshop");
@@ -147,22 +153,22 @@ function createWorkshop({
 		document.createTextNode(" spots available")
 	);
 
-	const cancelButton = document.createElement("button");
-	cancelButton.classList.add("workshop_cta_cancel");
-	cancelButton.textContent = "Cancel";
+	// const cancelButton = document.createElement("button");
+	// cancelButton.classList.add("workshop_cta_detail");
+	// cancelButton.textContent = "Details";
 
 	const expandButton = document.createElement("button");
 	expandButton.classList.add("workshop_expand");
 
 	const expandIcon = document.createElement("img");
-	expandIcon.src = "images/chevron_handdraw.svg";
+	expandIcon.src = "../images/chevron_handdraw.svg";
 	expandIcon.alt = "unfold card to see details";
 
 	expandButton.append(expandIcon);
 
 	const detailLink = document.createElement("a");
 	detailLink.classList.add("workshop_cta_detail");
-	detailLink.href = "#";
+	detailLink.href = "../workshop-details/workshop-details.html?id="+id;
 	detailLink.textContent = "Details";
 
 	content.append(
@@ -171,7 +177,7 @@ function createWorkshop({
 		descriptionElement,
 		body,
 		spots,
-		cancelButton,
+		// cancelButton,
 		expandButton
 	);
 
