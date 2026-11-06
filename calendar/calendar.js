@@ -1,3 +1,4 @@
+import {getJWT} from "../tools.js";
 
 getWorkshop()
 
@@ -7,7 +8,14 @@ function getHourFromDate(date) {
 	})
 }
 function getWorkshop() {
-	fetch('http://localhost:8081/workshops')
+	fetch('http://172.33.1.234:8081/workshops',
+		{
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+				'Authorization': `Bearer ${getJWT()}`
+			}
+		})
 		.then(response => response.json())
 		.then((workshops) => {
 			const workshopsDTO = workshops.map(workshop => {

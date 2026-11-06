@@ -1,3 +1,5 @@
+import {getJWT} from '../tools.js'
+
 const form = document.querySelector(".workshop-form");
 
 const name = document.querySelector("#name");
@@ -69,10 +71,11 @@ form.addEventListener("submit", async function (event) {
 
 	try {
 		// Send the data to the API
-		const response = await fetch("http://localhost:8081/workshops", {
+		const response = await fetch("http://172.33.1.234:8081/workshops", {
 			method: "POST",
 			headers: {
-				"Content-Type": "application/json"
+				"Content-Type": "application/json",
+				"Authorization": `Bearer ${getJWT()}`
 			},
 			body: JSON.stringify(workshop)
 		});
@@ -103,7 +106,13 @@ form.addEventListener("submit", async function (event) {
 //recuperer les categories
 async function loadCategories() {
 	try {
-		const response = await fetch("http://localhost:8081/workshops/cate");
+		const response = await fetch("http://172.33.1.234:8081/workshops/cate", {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": `Bearer ${getJWT()}`
+			}
+		});
 
 		if (!response.ok) {
             alert("categories not loaded")

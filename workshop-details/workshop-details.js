@@ -26,7 +26,7 @@ btnCancel.addEventListener('click', e => {
 btnDelete.addEventListener('click', async e => {
 	e.preventDefault()
 	const response = await fetch(
-		'http://localhost:8081/workshops/' + workshopID,
+		'http://172.33.1.234:8081/workshops/' + workshopID,
 		{
 			method: 'DELETE',
 			headers: {
@@ -46,7 +46,7 @@ btnDelete.addEventListener('click', async e => {
 async function getWorkshopByID() {
 	try {
 		const response = await fetch(
-			'http://localhost:8081/workshops/' + workshopID,
+			'http://172.33.1.234:8081/workshops/' + workshopID,
 			{
 				method: 'GET',
 				headers: {
@@ -98,7 +98,14 @@ async function getWorkshopByID() {
 
 async function getCategories(categoryID) {
 	try {
-		const response = await fetch("http://localhost:8081/workshops/cate");
+		const response = await fetch("http://172.33.1.234:8081/workshops/cate",
+			{
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization': `Bearer ${getJWT()}`
+				}
+			});
 
 		if (!response.ok) {
 			// throw new Error("Impossible de récupérer les catégories");
@@ -128,7 +135,7 @@ async function cancelReservation(reservationID, participantElement) {
 
 	try {
 		const response = await fetch(
-			`http://localhost:8081/reservations/cancel/${reservationID}`,
+			`http://172.33.1.234:8081/reservations/cancel/${reservationID}`,
 			{
 				method: "DELETE",
 				headers: {
@@ -167,7 +174,7 @@ async function UpdateWorkshopByID() {
 	};
 
 	const response = await fetch(
-		"http://localhost:8081/workshops/" + workshopID,
+		"http://172.33.1.234:8081/workshops/" + workshopID,
 		{
 			method: "PUT",
 			headers: {
@@ -181,7 +188,11 @@ async function UpdateWorkshopByID() {
 		const error = await response.text();
 		console.error("Erreur lors de la modification :", error);
 		return;
+	} else {
+		window.alert("Atelier modifié avec succès")
+		window.location.pathname = "calendar/calendar.html"
 	}
+
 }
 
 btnUpdate.addEventListener("click", (event) => {
