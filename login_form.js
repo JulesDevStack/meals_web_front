@@ -19,7 +19,7 @@ const checkPassword = (password) => {
 async function sendLoginRequest(email, password) {
     let loginCredentialsDTO = {email: email, password: password};
     try {
-        const response = await fetch("http://172.33.1.234:8081/login", {
+        const response = await fetch("http://172.33.1.250:8081/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

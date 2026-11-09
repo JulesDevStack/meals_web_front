@@ -8,7 +8,7 @@ function getHourFromDate(date) {
 	})
 }
 function getWorkshop() {
-	fetch('http://172.33.1.234:8081/workshops',
+	fetch('http://172.33.1.250:8081/workshops',
 		{
 			method: 'GET',
 			headers: {

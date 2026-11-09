@@ -71,7 +71,7 @@ form.addEventListener("submit", async function (event) {
 
 	try {
 		// Send the data to the API
-		const response = await fetch("http://172.33.1.234:8081/workshops", {
+		const response = await fetch("http://172.33.1.250:8081/workshops", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -106,7 +106,7 @@ form.addEventListener("submit", async function (event) {
 //recuperer les categories
 async function loadCategories() {
 	try {
-		const response = await fetch("http://172.33.1.234:8081/workshops/cate", {
+		const response = await fetch("http://172.33.1.250:8081/workshops/cate", {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",

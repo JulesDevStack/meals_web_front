@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meals Festival · Logo animé</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; min-height: 100svh; display: grid; place-items: center; padding: 24px; background: #ecebe5; color: #122c23; font: 16px system-ui, sans-serif; }
+        main { width: min(100%, 920px); }
+        header, footer, .controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+        h1 { font-size: 24px; letter-spacing: -.7px; margin: 0; }
+        header p, footer { font-size: 13px; }
+        .stage { margin: 24px 0; border-radius: 20px; background: #122c23; overflow: hidden; position: relative; }
+        #logo { width: 100%; aspect-ratio: 1000 / 760; }
+        #logo img { width: 100%; height: 100%; padding: 9%; }
+        button, a { border: 1px solid #122c2330; border-radius: 30px; background: transparent; padding: 11px 18px; color: inherit; font: inherit; font-size: 14px; cursor: pointer; text-decoration: none; }
+        a { background: #122c23; color: white; }
+        button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #ba1d1d; outline-offset: 4px; }
+        button:disabled { opacity: .45; cursor: default; }
+        input { width: 100%; accent-color: #096c49; margin-bottom: 20px; }
+        #status { margin-top: 16px; font-size: 13px; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js" defer></script>
+    <script src="preview.js" defer></script>
+</head>
+<body>
+<main>
+    <header><h1>Meals Festival</h1><p>Logo animé · 5 secondes · 60 images/s</p></header>
+    <div class="stage" role="img" aria-label="Logo Meals Festival animé"><div id="logo"><img src="logo-source.svg" alt=""></div></div>
+    <input id="timeline" type="range" min="0" max="299" value="66" step="1" aria-label="Position dans l’animation" disabled>
+    <footer>
+        <div class="controls"><button id="toggle" disabled>Pause</button><button id="replay" disabled>Rejouer</button><button id="background">Fond clair</button></div>
+        <a href="meals-festival-logo.json" download>Télécharger le JSON</a>
+        <a href="preview-letters.html">Version lettre par lettre</a>
+    </footer>
+    <p id="status" role="status">Chargement de l’aperçu…</p>
+</main>
+</body>
+</html>

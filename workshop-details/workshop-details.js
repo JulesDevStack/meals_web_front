@@ -26,7 +26,7 @@ btnCancel.addEventListener('click', e => {
 btnDelete.addEventListener('click', async e => {
 	e.preventDefault()
 	const response = await fetch(
-		'http://172.33.1.234:8081/workshops/' + workshopID,
+		'http://172.33.1.250:8081/workshops/' + workshopID,
 		{
 			method: 'DELETE',
 			headers: {
@@ -46,7 +46,7 @@ btnDelete.addEventListener('click', async e => {
 async function getWorkshopByID() {
 	try {
 		const response = await fetch(
-			'http://172.33.1.234:8081/workshops/' + workshopID,
+			'http://172.33.1.250:8081/workshops/' + workshopID,
 			{
 				method: 'GET',
 				headers: {
@@ -98,7 +98,7 @@ async function getWorkshopByID() {
 
 async function getCategories(categoryID) {
 	try {
-		const response = await fetch("http://172.33.1.234:8081/workshops/cate",
+		const response = await fetch("http://172.33.1.250:8081/workshops/cate",
 			{
 				method: 'GET',
 				headers: {
@@ -135,7 +135,7 @@ async function cancelReservation(reservationID, participantElement) {
 
 	try {
 		const response = await fetch(
-			`http://172.33.1.234:8081/reservations/cancel/${reservationID}`,
+			`http://172.33.1.250:8081/reservations/cancel/${reservationID}`,
 			{
 				method: "DELETE",
 				headers: {
@@ -174,7 +174,7 @@ async function UpdateWorkshopByID() {
 	};
 
 	const response = await fetch(
-		"http://172.33.1.234:8081/workshops/" + workshopID,
+		"http://172.33.1.250:8081/workshops/" + workshopID,
 		{
 			method: "PUT",
 			headers: {
